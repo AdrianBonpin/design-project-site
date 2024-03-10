@@ -1,0 +1,171 @@
+.hero {
+    display: grid;
+    grid-template-columns: 2fr;
+    align-items: center;
+}
+
+.herobg {
+    position: absolute;
+    bottom: 0;
+    width: 100lvw;
+    height: auto;
+    z-index: 1;
+}
+
+.hero_left {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero_left > h3 {
+    color: var(--text-30);
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+    background: var(--secondary);
+}
+
+.teambg {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100lvw;
+    z-index: 0;
+}
+
+.team_cont {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    z-index: 1;
+}
+
+.team_member {
+    width: 100%;
+    height: 30rem;
+    padding: 1rem;
+    background: var(--accent);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team_member > p {
+    color: var(--text-30);
+} 
+
+.team_member > p:last-child {
+    color: var(--text);
+    text-align: justify;
+}
+
+.team_pic {
+    width: 100%;
+    height: 12rem;
+    background: var(--background);
+    border-radius: 15px;
+}
+
+.sdg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+}
+
+.sdg > div {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    gap: 1rem;
+}
+
+.sdg_info > h5 {
+    color: var(--text-30);
+}
+
+.sdg_info > h4 {
+    text-align: justify;
+    width: 90%;
+}
+
+.sdg_info {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sdg_info > a {
+    width: max-content;
+}
+
+.sdg_preview {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.sdg_blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 220%;
+    z-index: -1;
+}
+
+.sdg_photo {
+    aspect-ratio: 4/3;
+    width: 100%;
+    height: auto;
+    background: var(--accent);
+    border-radius: 15px;
+    box-shadow: 0 0 15spx -10px black;
+}
+
+@media (max-width: 1024px) {
+    .team_cont {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .team {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sdg {
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .sdg_blob {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .team_cont {
+        grid-template-columns: 1fr;
+    }
+
+    .team_member {
+        transform: translateY(0) !important;
+    }
+}
