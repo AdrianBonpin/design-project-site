@@ -33,7 +33,7 @@ export default function SDGPage() {
     )
 }
 
-export function SDGHero({
+function SDGHero({
     title,
     name,
     desc,
@@ -87,7 +87,7 @@ export function SDGHero({
     )
 }
 
-export function SDGProbPersona({
+function SDGProbPersona({
     problem,
     persona,
 }: {
@@ -144,7 +144,7 @@ export function SDGProbPersona({
     )
 }
 
-export function SDGPersonas({
+function SDGPersonas({
     persona,
 }: {
     persona: {
