@@ -1,0 +1,80 @@
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.hero_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.hero_left > h2 {
+    color: var(--text-30);
+}
+
+.hero_left > h4 {
+    text-align: justify;
+}
+
+.probPersona {
+    background: var(--primary);
+    height: max-content;
+    color: var(--background);
+    display: grid;
+    gap: 2rem;
+    padding-bottom: calc(10lvh + 15rem);
+}
+
+.herobg {
+    position: absolute;
+    bottom: 0;
+    width: 100lvw;
+    height: auto;
+    z-index: 1;
+}
+
+.probpersbg {
+    position: absolute;
+    bottom: 0;
+    width: 100lvw;
+    height: auto;
+    z-index: 1;
+}
+
+.persona {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+}
+
+.persona_cont {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
+    background: var(--secondary);
+    border-radius: 15px;
+}
+
+.persona_modal {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    aspect-ratio: 16/9;
+    width: 90lvw;
+    height: auto;
+    padding: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 2;
+    background: var(--background);
+    box-shadow: 0 0 20px -10px black;
+}

@@ -40,7 +40,6 @@ export default function LandingPage() {
                 </motion.div>
             </section>
             <section ref={teamRef} id="team" className={styles.team}>
-                <h1>The Team</h1>
                 <TeamCont teamRef={teamRef} />
                 <TeamBG className={styles.teambg} />
             </section>
@@ -73,7 +72,7 @@ export default function LandingPage() {
                         consectetur a ducimus ab illum nobis eligendi, nam
                         delectus nemo eum numquam nostrum Ex, sapiente?
                     </motion.h4>
-                    <Link href={'/'}>
+                    <Link href={'/sdg-first'}>
                         <motion.button
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}

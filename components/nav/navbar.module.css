@@ -15,9 +15,9 @@
 
     background: var(--background);
 
-    /* box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
     background: var(--background-30);
-    backdrop-filter: blur(5px); */
+    backdrop-filter: blur(5px);
 }
 
 .navbar h4 {
