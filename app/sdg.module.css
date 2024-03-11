@@ -1,7 +1,7 @@
 .hero {
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 2rem;
+    grid-template-columns: 2fr 1fr;
 }
 
 .hero_left {
@@ -60,6 +60,15 @@
     height: auto;
     background: var(--secondary);
     border-radius: 15px;
+    display: grid;
+    place-items: center;
+}
+
+.persona_cont > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .persona_modal {
@@ -77,4 +86,58 @@
     z-index: 2;
     background: var(--background);
     box-shadow: 0 0 20px -10px black;
+    display: grid;
+    place-items: center;
+}
+
+.persona_modal > img {
+    width: 90%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brain {
+    padding-top: calc(10lvh + 5rem);
+    background: var(--secondary);
+    display: grid;
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.brain > div {
+    width: 100%;
+    height: 100%;
+    padding: inherit;
+    position: absolute;
+    display: grid;
+    grid-template-rows: auto auto 40rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.brainbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100lvw;
+    height: auto;
+    z-index: 1;
+}
+
+.brainimg {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .persona_modal {
+        padding: .5rem;
+    }
+    .hero {
+        height: max-content;
+    }
+    .brain > div {
+        grid-template-rows: auto auto 10rem;
+    }
 }

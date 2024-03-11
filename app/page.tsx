@@ -4,8 +4,13 @@ import styles from './landing.module.css'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { once } from 'events'
 import Link from 'next/link'
-import { StaticImageData } from 'next/image'
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import { MutableRefObject, useRef } from 'react'
+
+import adrian from '@/public/team/adrian.jpg'
+import carlo from '@/public/team/carlo.png'
+import karylle from '@/public/team/karylle.png'
+import matt from '@/public/team/matt.png'
 
 export default function LandingPage() {
     const headTxt = useRef(null)
@@ -51,7 +56,7 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + 0.2 * 0 }}
                     >
-                        SDG 8
+                        SeekStart
                     </motion.h1>
                     <motion.h5
                         initial={{ opacity: 0, x: -50 }}
@@ -67,10 +72,9 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + 0.2 * 2 }}
                     >
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Neque iusto ut quidem aliquam libero esse
-                        consectetur a ducimus ab illum nobis eligendi, nam
-                        delectus nemo eum numquam nostrum Ex, sapiente?
+                        The Philippines' job market challenges Filipinos with
+                        underemployment and limited advancement, prompting this
+                        project to develop a job seeker empowerment system.
                     </motion.h4>
                     <Link href={'/sdg-first'}>
                         <motion.button
@@ -101,7 +105,7 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + 0.2 * 0 }}
                     >
-                        SDG 9
+                        LAAG
                     </motion.h1>
                     <motion.h5
                         initial={{ opacity: 0, x: -50 }}
@@ -117,10 +121,10 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + 0.2 * 2 }}
                     >
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Neque iusto ut quidem aliquam libero esse
-                        consectetur a ducimus ab illum nobis eligendi, nam
-                        delectus nemo eum numquam nostrum Ex, sapiente
+                        A two-phased project to improve Cebu's public
+                        transportation uses a mobile app for navigation and data
+                        collection (phase one) and then analyzes that data to
+                        optimize jeepney routes (phase two).
                     </motion.h4>
                     <Link href={'/'}>
                         <motion.button
@@ -152,24 +156,26 @@ function TeamCont({ teamRef }: { teamRef: MutableRefObject<null> }) {
             <motion.div className={styles.team_cont} style={{ y }}>
                 <TeamMembers
                     stagger={false}
-                    name="Adrian Bonpin"
-                    title="Frontend Developer"
-                    desc="I like doing many things. I dont really understand why my life is in shambles... Anyways, I spearheaded this site!"
+                    name="Adrian Alfred Bonpin"
+                    img={adrian}
                 />
-                <TeamMembers stagger={true} />
-                <TeamMembers stagger={false} />
-                <TeamMembers stagger={true} />
-            </motion.div>
-            <motion.div className={styles.team_cont_mobile}>
+                <TeamMembers
+                    stagger={true}
+                    name="Jan Carlo Juab"
+                    img={carlo}
+                />
                 <TeamMembers
                     stagger={false}
-                    name="Adrian Bonpin"
-                    title="Frontend Developer"
-                    desc="I like doing many things. I dont really understand why my life is in shambles... Anyways, I spearheaded this site!"
+                    name="Karylle Bernate"
+                    img={karylle}
                 />
-                <TeamMembers stagger={true} />
-                <TeamMembers stagger={false} />
-                <TeamMembers stagger={true} />
+                <TeamMembers
+                    stagger={true}
+                    name="Matt Vincent Magdadaro"
+                    img={matt}
+                />
+            </motion.div>
+            <motion.div className={styles.team_cont_mobile}>
             </motion.div>
         </>
     )
@@ -178,13 +184,11 @@ function TeamCont({ teamRef }: { teamRef: MutableRefObject<null> }) {
 function TeamMembers({
     stagger,
     name,
-    title,
-    desc,
+    img,
 }: {
     stagger: boolean
-    name?: string
-    title?: string
-    desc?: string
+    name: string
+    img: StaticImageData
 }) {
     const base_pos = stagger ? 0 : 50
     const rnd_delay = Math.floor(Math.random() * 4)
@@ -205,14 +209,10 @@ function TeamMembers({
                 type: 'spring',
             }}
         >
-            <div className={styles.team_pic}></div>
+            <div className={styles.team_pic}>
+                <Image alt={name} src={img} />
+            </div>
             <h5>{name ? name : 'Enter Name'}</h5>
-            <p>{title ? title : 'Enter title'}</p>
-            <p>
-                {desc
-                    ? desc
-                    : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ullam ipsum velit autem fugit iste ut officia? Cum in sit, tempora nisi tempore rem repudiandae, iste illum quaerat vero molestias!'}
-            </p>
         </motion.div>
     )
 }

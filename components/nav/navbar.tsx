@@ -27,7 +27,7 @@ export default function Navbar() {
                 </motion.h4>
             </Link>
             <div className={styles.right}>
-                <Link href={'/#sdg-first'}>
+                <Link href={'/sdg-first'}>
                     <motion.h4
                         initial={{
                             y: -10,
@@ -49,7 +49,7 @@ export default function Navbar() {
                         SDG 8
                     </motion.h4>
                 </Link>
-                <Link href={'/#sdg-second'}>
+                <Link href={'/sdg-second'}>
                     <motion.h4
                         initial={{
                             y: -10,

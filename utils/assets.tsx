@@ -165,3 +165,24 @@ export function SDGNextBG({ className }: { className?: string }) {
         </svg>
     )
 }
+
+export function SDGBrainBG({ className }: { className: string }) {
+    return (
+        <svg
+            id="visual"
+            viewBox="0 0 1920 400"
+            width="1920"
+            height="400"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            version="1.1"
+        >
+            <path
+                d="M0 77L45.7 86.3C91.3 95.7 182.7 114.3 274.2 123.7C365.7 133 457.3 133 548.8 130C640.3 127 731.7 121 823 123.3C914.3 125.7 1005.7 136.3 1097 135.2C1188.3 134 1279.7 121 1371.2 120.2C1462.7 119.3 1554.3 130.7 1645.8 128.3C1737.3 126 1828.7 110 1874.3 102L1920 94L1920 0L1874.3 0C1828.7 0 1737.3 0 1645.8 0C1554.3 0 1462.7 0 1371.2 0C1279.7 0 1188.3 0 1097 0C1005.7 0 914.3 0 823 0C731.7 0 640.3 0 548.8 0C457.3 0 365.7 0 274.2 0C182.7 0 91.3 0 45.7 0L0 0Z"
+                fill="#ededed"
+                strokeLinecap="round"
+                strokeLinejoin="miter"
+            ></path>
+        </svg>
+    )
+}

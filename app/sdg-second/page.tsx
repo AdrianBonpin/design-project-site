@@ -4,40 +4,43 @@ import styles from '../sdg.module.css'
 import {
     AnimatePresence,
     motion,
+    spring,
     useScroll,
     useTransform,
     wrap,
 } from 'framer-motion'
 import { useRef, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
-import joseImg from '@/public/sdg-first/jose.png'
-import matteoImg from '@/public/sdg-first/matteo.png'
-import jose from '@/public/sdg-first/joseprof.png'
-import matteo from '@/public/sdg-first/matteoprof.png'
+import klaroImg from '@/public/sdg-second/klaro.png'
+import angelinaImg from '@/public/sdg-second/angelina.png'
+import klaro from '@/public/sdg-second/klaroprof.png'
+import angelina from '@/public/sdg-second/angelinaprof.png'
 
 export default function SDGPage() {
     return (
         <>
             <SDGHero
-                title="SDG 8: Decent Work and Economic Growth"
-                name="SeekStart"
+                title="SDG 9: Decent Work and Economic Growth"
+                name="LAAG"
                 desc={[
-                    'The current job market in the Philippines presents a challenge for many Filipinos, with underemployment and limited opportunities for career advancement being significant hurdles. To address these issues, this project proposes the development of a system specifically designed to empower job seekers.',
+                    'To improve public transportation efficiency in Cebu, this project takes a two-phased approach, focusing on data collection and optimization:',
+                    '- Phase One: This phase addresses navigation difficulties for new and existing residents in Cebu, phase one will develop a mobile application that provides navigation assistance (similar to Google Maps) and collects anonymous travel data.',
+                    '- Phase Two: Leveraging phase one’s data, this phase tackles Cebu’s traffic issues, especially inefficient jeepney routes, by processing the data into easy-to-understand formats for route analysts.',
                 ]}
             />
             <SDGProbPersona
                 problem={[
-                    'Underemployment in the Philippines stems from various factors, including:',
-                    '- Limited work experience: Fresh graduates struggle to find jobs due to a lack of work experience.',
-                    '- Socioeconomic discrimination: Individuals from low-paying backgrounds face bias from employers.',
-                    '- Overly strict hiring requirements: Unnecessarily strict job qualifications exclude qualified candidates.',
+                    'The current jeepney routes in Cebu are inefficient and contribute to traffic congestion due to:',
+                    '- Overlapping routes: Multiple jeepneys serving similar areas create unnecessary congestion.',
+                    '- Limited coverage: Certain parts of Cebu lack proper jeepney service, forcing detours and longer commutes.',
+                    '- Unbalanced fares: Routes with varying distances for the same fare lead to uneven passenger loads and inefficiencies.',
                 ]}
-                persona="Our target audience encompasses individuals seeking career advancement, including those with limited experience (e.g., individuals in low-paying jobs, undergraduates)."
+                persona="Our target audience are jeepney commuters and route analysts."
             />
             <SDGPersonas
                 persona={[
-                    { img: jose, imgMain: joseImg },
-                    { img: matteo, imgMain: matteoImg },
+                    { img: klaro, imgMain: klaroImg },
+                    { img: angelina, imgMain: angelinaImg },
                 ]}
             />
             <SDGBrainstorm
