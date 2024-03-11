@@ -46,11 +46,11 @@ export default function SDGPage() {
             <SDGBrainstorm
                 desc="Our brainstorming sessions helped us come up with new ideas, improve on old ones, and fix any issues from past systems. Overall, they helped us refine our ideas within the team."
                 img={[
-                    '/sdg-first/img1.png',
-                    '/sdg-first/img2.png',
-                    '/sdg-first/img3.png',
-                    '/sdg-first/img4.png',
-                    '/sdg-first/img5.png',
+                    '/sdg-second/img1.png',
+                    '/sdg-second/img2.png',
+                    '/sdg-second/img3.png',
+                    '/sdg-second/img4.png',
+                    '/sdg-second/img5.png',
                 ]}
             />
         </>
