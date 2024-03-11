@@ -34,6 +34,7 @@ export function HeroBG({ className }: { className?: string }) {
 }
 
 export function TeamBG({ className }: { className?: string }) {
+
     return (
         <svg
             id="visual"

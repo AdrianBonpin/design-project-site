@@ -1,17 +1,28 @@
 'use client'
 import { HeroBG, SDGBlob1, SDGBlob2, TeamBG } from '@/utils/assets'
 import styles from './landing.module.css'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { once } from 'events'
 import Link from 'next/link'
 import { StaticImageData } from 'next/image'
+import { MutableRefObject, useEffect, useRef, useState } from 'react'
 
 export default function LandingPage() {
+    const headTxt = useRef(null)
+    const teamRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: headTxt,
+        offset: ['start start', 'end start'],
+    })
+
+    const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+    const scale = useTransform(scrollYProgress, [0, 1], ['100%', '80%'])
+
     return (
         <>
-            <section id="top" className={styles.hero}>
+            <section id="top" ref={headTxt} className={styles.hero}>
                 <HeroBG className={styles.herobg} />
-                <div className={styles.hero_left}>
+                <motion.div className={styles.hero_left} style={{ y, scale }}>
                     <motion.h1
                         initial={{ x: -50, opacity: 0 }}
                         animate={{ x: 0, opacity: 100 }}
@@ -26,21 +37,11 @@ export default function LandingPage() {
                     >
                         Pushing Ideas and Leading Change
                     </motion.h3>
-                </div>
+                </motion.div>
             </section>
-            <section id="team" className={styles.team}>
+            <section ref={teamRef} id="team" className={styles.team}>
                 <h1>The Team</h1>
-                <div className={styles.team_cont}>
-                    <TeamMembers
-                        stagger={false}
-                        name="Adrian Bonpin"
-                        title="Frontend Developer"
-                        desc="I like doing many things. I dont really understand why my life is in shambles... Anyways, I spearheaded this site!"
-                    />
-                    <TeamMembers stagger={true} />
-                    <TeamMembers stagger={false} />
-                    <TeamMembers stagger={true} />
-                </div>
+                <TeamCont teamRef={teamRef} />
                 <TeamBG className={styles.teambg} />
             </section>
             <section id="sdg-first" className={styles.sdg}>
@@ -135,6 +136,42 @@ export default function LandingPage() {
                     </Link>
                 </div>
             </section>
+        </>
+    )
+}
+
+function TeamCont({ teamRef }: { teamRef: MutableRefObject<null> }) {
+    const { scrollYProgress } = useScroll({
+        target: teamRef,
+        offset: ['center', 'end start'],
+    })
+
+    const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+
+    return (
+        <>
+            <motion.div className={styles.team_cont} style={{ y }}>
+                <TeamMembers
+                    stagger={false}
+                    name="Adrian Bonpin"
+                    title="Frontend Developer"
+                    desc="I like doing many things. I dont really understand why my life is in shambles... Anyways, I spearheaded this site!"
+                />
+                <TeamMembers stagger={true} />
+                <TeamMembers stagger={false} />
+                <TeamMembers stagger={true} />
+            </motion.div>
+            <motion.div className={styles.team_cont_mobile}>
+                <TeamMembers
+                    stagger={false}
+                    name="Adrian Bonpin"
+                    title="Frontend Developer"
+                    desc="I like doing many things. I dont really understand why my life is in shambles... Anyways, I spearheaded this site!"
+                />
+                <TeamMembers stagger={true} />
+                <TeamMembers stagger={false} />
+                <TeamMembers stagger={true} />
+            </motion.div>
         </>
     )
 }
