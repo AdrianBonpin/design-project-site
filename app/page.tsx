@@ -11,6 +11,8 @@ import adrian from '@/public/team/adrian.jpg'
 import carlo from '@/public/team/carlo.png'
 import karylle from '@/public/team/karylle.png'
 import matt from '@/public/team/matt.png'
+import thumbnail_sdg8 from '@/public/sdg-first/thumbnail.png'
+import thumbnail_sdg9 from '@/public/sdg-second/thumbnail.png'
 
 export default function LandingPage() {
     const headTxt = useRef(null)
@@ -90,13 +92,17 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.sdg_preview}>
                     <SDGBlob1 className={styles.sdg_blob} />
-                    <div className={styles.sdg_photo}></div>
+                    <div className={styles.sdg_photo}>
+                        <Image src={thumbnail_sdg8} alt="SDG 8 IMG" />
+                    </div>
                 </div>
             </section>
             <section id="sdg-second" className={styles.sdg}>
                 <div className={styles.sdg_preview}>
                     <SDGBlob2 className={styles.sdg_blob} />
-                    <div className={styles.sdg_photo}></div>
+                    <div className={styles.sdg_photo}>
+                        <Image src={thumbnail_sdg9} alt="SDG 8 IMG" />
+                    </div>
                 </div>
                 <div className={styles.sdg_info}>
                     <motion.h1

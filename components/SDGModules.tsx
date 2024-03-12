@@ -381,10 +381,12 @@ export function SDGWireframe({
     items,
     extra,
     noTop,
+    desc,
 }: {
     items: { title: string; content: string[] }[]
     extra?: string
     noTop?: boolean
+    desc?: string
 }) {
     const [curr, setCurr] = useState(0)
     return (
@@ -407,8 +409,7 @@ export function SDGWireframe({
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + 0.2 * 1 }}
                 >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Recusandae omnis, nisi dolores velit dolorum eum.
+                    {desc ? desc : ''}
                 </motion.h4>
                 <motion.h5>
                     Select Page
@@ -487,5 +488,83 @@ function WireframeDrop({
                 </AnimatePresence>
             </div>
         </>
+    )
+}
+
+export function SDGStoryBoard({
+    name,
+    items,
+}: {
+    name: string
+    items: { title: string; content: string[] }[]
+}) {
+    const [curr, setCurr] = useState(0)
+
+    function chkTab(bullet: string, idx: number) {
+        if (bullet.startsWith('-')) {
+            return <motion.h5 key={idx}>{bullet}</motion.h5>
+        } else {
+            return <motion.h4 key={idx}>• {bullet}</motion.h4>
+        }
+    }
+    return (
+        <section className={styles.wireframe}>
+            <div className={styles.wireframe_top}>
+                <motion.h1
+                    variants={pop_in_text}
+                    initial={'initial'}
+                    whileInView={'title'}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 + 0.2 * 0 }}
+                >
+                    Persona: {name}
+                </motion.h1>
+                <motion.h5>
+                    Select Page
+                    <WireframeDrop
+                        items={items}
+                        setParCurr={setCurr}
+                        curr={curr}
+                    />
+                </motion.h5>
+            </div>
+            <div className={styles.wireframe_bottom}>
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    {items[curr].title}
+                </motion.h2>
+                {items[curr].content.map((content, idx) =>
+                    chkTab(content, idx)
+                )}
+            </div>
+        </section>
+    )
+}
+
+export function SDGWireShow({ image }: { image: StaticImageData }) {
+    return (
+        <section className={styles.wirepng}>
+            <motion.h1
+                variants={pop_in_text}
+                initial={'initial'}
+                whileInView={'title'}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', delay: 0.5 + 0.2 * 0 }}
+            >
+                Hi-Fi Wireframe
+            </motion.h1>
+            <motion.div
+                variants={pop_in_text}
+                initial={'initial'}
+                whileInView={'title'}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', delay: 0.5 + 0.2 * 1 }}
+            >
+                <Image src={image} alt="Wireframe Outline" />
+            </motion.div>
+        </section>
     )
 }
