@@ -99,6 +99,65 @@ export default function SDGPage() {
                             'Shows a “People You May Know” displaying users that may be affiliated with the user',
                         ],
                     },
+                    {
+                        title: 'Job List Screen',
+                        content: [
+                            'Detailed descriptions and titles of open jobs with images to support',
+                            'Scrollable Job list',
+                            'Filter to choose specifications to find specific jobs',
+                        ]
+                    },
+                    {
+                        title: 'Job Screen',
+                        content: [
+                            'Navbar with a search bar, Home button, Friends button, Notification button, Messages button, and Profile button',
+                            'Displayed the current chosen job',
+                            'Displays detailed information about the company hiring',
+                            'Shows the job description with the specific qualifications',
+                            'Displays a “Meet The Hiring Team” to get to know the employers',
+                            '“Apply” button to apply for said job opening',
+                            '“Save” button in case the user wants to see this job for a future purposes'
+                        ]
+                    },
+                    {
+                        title: 'Message Screen',
+                        content: [
+                            'Shows a list of messages that may have been enhanced between user and employer',
+                            'Able to choose “Important” and “Archived” messages through the respective buttons',
+                            'Able to mark a message “Archived” or “Important”',
+                            'Able to search specific messages',
+                            'Click on a message to focus on a specific message box with a specific recipient',
+                        ]
+                    },
+                    {
+                        title: 'Message Screen (Focused)',
+                        content: [
+                            'Sees the name of the recipient',
+                            'Able to close the current message box with the “X” button',
+                            'Able to send to type and send a message',
+                            'Able to send attachments such as images and pdf files',
+                            'Smaller version of a scrollable message screen on the left shows up in case the user wants to switch between message boxes',
+                            'Still able to search for specific messages',
+                        ]
+                    },
+                    {
+                        title: 'Notifications Screen',
+                        content: [
+                            'Receive notifications when a user receives a message, a recommended job offer, and status of a job they have applied for',
+                            'Able to click “All” which shows all notifications regardless of being read or not in a chronological order',
+                            'Able to click “Unread” which shows all unread notifications in a chronological order',
+                            'Able to click “Read” which shows read notifications in a chronological order',
+                        ]
+                    },
+                    {
+                        title: 'Additional Features',
+                        content:[
+                            'Navbar with a search bar, Home button, Friends button, Notification button, Messages button, and Profile button',
+                            'Notification alerts will show up on the notification button indicated by number of unread notifications',
+                            'Support for multiple languages',
+                            'Accessibility features for users with disabilities',
+                        ]
+                    }
                 ]}
             />
         </>
