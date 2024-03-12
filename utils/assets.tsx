@@ -195,7 +195,7 @@ export function CarretRight({ className }: { className?: string }) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 256 512"
             className={className}
-            whileTap={{x: 10, transition:{type: 'spring'}}}
+            whileTap={{ x: 10, transition: { type: 'spring' } }}
         >
             <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" />
         </motion.svg>
@@ -208,9 +208,54 @@ export function CarretLeft({ className }: { className?: string }) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 256 512"
             className={className}
-            whileTap={{x: -10, transition:{type: 'spring'}}}
+            whileTap={{ x: -10, transition: { type: 'spring' } }}
         >
             <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z" />
         </motion.svg>
+    )
+}
+
+export function CarretDown({ className }: { className?: string }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+            className={className}
+        >
+            <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+        </svg>
+    )
+}
+
+export function CarretUp({ className }: { className?: string }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+            className={className}
+        >
+            <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z" />
+        </svg>
+    )
+}
+
+export function SDGWireframeCurve({ className }: { className?: string }) {
+    return (
+        <svg
+            id="visual"
+            viewBox="0 0 1920 200"
+            width="1920"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            version="1.1"
+        >
+            <path
+                d="M0 86L45.7 82.8C91.3 79.7 182.7 73.3 274.2 79C365.7 84.7 457.3 102.3 548.8 109.7C640.3 117 731.7 114 823 107.8C914.3 101.7 1005.7 92.3 1097 88.5C1188.3 84.7 1279.7 86.3 1371.2 88.3C1462.7 90.3 1554.3 92.7 1645.8 101.3C1737.3 110 1828.7 125 1874.3 132.5L1920 140L1920 0L1874.3 0C1828.7 0 1737.3 0 1645.8 0C1554.3 0 1462.7 0 1371.2 0C1279.7 0 1188.3 0 1097 0C1005.7 0 914.3 0 823 0C731.7 0 640.3 0 548.8 0C457.3 0 365.7 0 274.2 0C182.7 0 91.3 0 45.7 0L0 0Z"
+                fill="#84c7ea"
+                strokeLinecap="round"
+                strokeLinejoin="miter"
+            ></path>
+        </svg>
     )
 }
