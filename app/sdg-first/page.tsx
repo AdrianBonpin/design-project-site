@@ -8,7 +8,7 @@ import {
     useTransform,
     wrap,
 } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import joseImg from '@/public/sdg-first/jose.png'
 import matteoImg from '@/public/sdg-first/matteo.png'
@@ -123,7 +123,6 @@ function SDGHero({
                 </motion.h2>
                 {desc.map((cont, idx) => chkTab(cont, idx))}
             </motion.div>
-            <div className={styles.hero_right}></div>
             <SDGHeroBG className={styles.herobg} />
         </section>
     )
@@ -312,6 +311,17 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
     const paginate = (newDirection: number) => {
         setCurr([curr + newDirection, newDirection])
     }
+
+    useEffect(() => {
+        const scroll = setInterval(()=>{
+            setCurr([curr + 1, direction ])
+            if(curr == img.length -1){
+                setCurr([0, direction])
+            }
+        }, 4500)
+
+        return () => clearInterval(scroll)
+    }, [curr])
 
     return (
         <section ref={ref} className={styles.brain}>

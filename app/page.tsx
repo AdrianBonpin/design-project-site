@@ -159,11 +159,7 @@ function TeamCont({ teamRef }: { teamRef: MutableRefObject<null> }) {
                     name="Adrian Alfred Bonpin"
                     img={adrian}
                 />
-                <TeamMembers
-                    stagger={true}
-                    name="Jan Carlo Juab"
-                    img={carlo}
-                />
+                <TeamMembers stagger={true} name="Jan Carlo Juab" img={carlo} />
                 <TeamMembers
                     stagger={false}
                     name="Karylle Bernate"
@@ -176,6 +172,22 @@ function TeamCont({ teamRef }: { teamRef: MutableRefObject<null> }) {
                 />
             </motion.div>
             <motion.div className={styles.team_cont_mobile}>
+                <TeamMembers
+                    stagger={false}
+                    name="Adrian Alfred Bonpin"
+                    img={adrian}
+                />
+                <TeamMembers stagger={true} name="Jan Carlo Juab" img={carlo} />
+                <TeamMembers
+                    stagger={false}
+                    name="Karylle Bernate"
+                    img={karylle}
+                />
+                <TeamMembers
+                    stagger={true}
+                    name="Matt Vincent Magdadaro"
+                    img={matt}
+                />
             </motion.div>
         </>
     )
