@@ -124,14 +124,40 @@
 }
 
 .brainimg {
+    position: absolute;
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
 
+.brainimg_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    z-index: 1;
+    user-select: none;
+}
+.arrow:nth-last-child(2){
+    left: 0;
+}
+.arrow:last-child {
+    right: 0;
+}
+
 @media (max-width: 768px) {
     .persona_modal {
-        padding: .5rem;
+        padding: 0.5rem;
     }
     .hero {
         height: max-content;

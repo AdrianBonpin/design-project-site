@@ -1,5 +1,11 @@
 'use client'
-import { SDGBrainBG, SDGHeroBG, SDGNextBG } from '@/utils/assets'
+import {
+    CarretLeft,
+    CarretRight,
+    SDGBrainBG,
+    SDGHeroBG,
+    SDGNextBG,
+} from '@/utils/assets'
 import styles from '../sdg.module.css'
 import {
     AnimatePresence,
@@ -299,7 +305,7 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ['start', 'start end'],
+        offset: ['end', 'start end'],
     })
 
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
@@ -313,18 +319,15 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
     }
 
     useEffect(() => {
-        const scroll = setInterval(()=>{
-            setCurr([curr + 1, direction ])
-            if(curr == img.length -1){
-                setCurr([0, direction])
-            }
+        const scroll = setInterval(() => {
+            paginate(1)
         }, 4500)
 
         return () => clearInterval(scroll)
     }, [curr])
 
     return (
-        <section ref={ref} className={styles.brain}>
+        <section id="brainstorm" ref={ref} className={styles.brain}>
             <SDGBrainBG className={styles.brainbg} />
             <motion.div style={{ y }}>
                 <motion.h1
@@ -351,38 +354,46 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
                 >
                     {desc}
                 </motion.h4>
-                <AnimatePresence initial={false} custom={direction}>
-                    <motion.img
-                        alt="img"
-                        className={styles.brainimg}
-                        key={curr}
-                        src={img[imgIdx]}
-                        custom={direction}
-                        variants={gallery}
-                        initial={'enter'}
-                        animate={'center'}
-                        exit={'exit'}
-                        transition={{
-                            x: {
-                                type: 'spring',
-                                stiffness: 300,
-                                damping: 30,
-                            },
-                            opacity: { duration: 0.2 },
-                        }}
-                        drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
-                        dragElastic={1}
-                        onDragEnd={(e, { offset, velocity }) => {
-                            const swipe = swipePower(offset.x, velocity.x)
-                            if (swipe < -swipeConfidenceThreshold) {
-                                paginate(1)
-                            } else if (swipe > swipeConfidenceThreshold) {
-                                paginate(-1)
-                            }
-                        }}
-                    />
-                </AnimatePresence>
+                <div className={styles.brainimg_cont}>
+                    <AnimatePresence initial={false} custom={direction}>
+                        <motion.img
+                            alt="img"
+                            className={styles.brainimg}
+                            key={curr}
+                            src={img[imgIdx]}
+                            custom={direction}
+                            variants={gallery}
+                            initial={'enter'}
+                            animate={'center'}
+                            exit={'exit'}
+                            transition={{
+                                x: {
+                                    type: 'spring',
+                                    stiffness: 300,
+                                    damping: 30,
+                                },
+                                opacity: { duration: 0.2 },
+                            }}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={1}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = swipePower(offset.x, velocity.x)
+                                if (swipe < -swipeConfidenceThreshold) {
+                                    paginate(1)
+                                } else if (swipe > swipeConfidenceThreshold) {
+                                    paginate(-1)
+                                }
+                            }}
+                        />
+                    </AnimatePresence>
+                    <div className={styles.arrow} onClick={() => paginate(-1)}>
+                        <CarretLeft />
+                    </div>
+                    <div className={styles.arrow} onClick={() => paginate(1)}>
+                        <CarretRight />
+                    </div>
+                </div>
             </motion.div>
         </section>
     )

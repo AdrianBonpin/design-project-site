@@ -1,5 +1,11 @@
 'use client'
-import { SDGBrainBG, SDGHeroBG, SDGNextBG } from '@/utils/assets'
+import {
+    CarretLeft,
+    CarretRight,
+    SDGBrainBG,
+    SDGHeroBG,
+    SDGNextBG,
+} from '@/utils/assets'
 import styles from '../sdg.module.css'
 import {
     AnimatePresence,
@@ -324,7 +330,7 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
     }, [curr])
 
     return (
-        <section id='brainstorm' ref={ref} className={styles.brain}>
+        <section id="brainstorm" ref={ref} className={styles.brain}>
             <SDGBrainBG className={styles.brainbg} />
             <motion.div style={{ y }}>
                 <motion.h1
@@ -384,6 +390,12 @@ function SDGBrainstorm({ desc, img }: { desc: string; img: string[] }) {
                             }}
                         />
                     </AnimatePresence>
+                    <div className={styles.arrow} onClick={() => paginate(-1)}>
+                        <CarretLeft />
+                    </div>
+                    <div className={styles.arrow} onClick={() => paginate(1)}>
+                        <CarretRight />
+                    </div>
                 </div>
             </motion.div>
         </section>
