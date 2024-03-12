@@ -517,7 +517,7 @@ export function SDGStoryBoard({
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + 0.2 * 0 }}
                 >
-                    Persona: {name}
+                    Storyboard: {name}
                 </motion.h1>
                 <motion.h5>
                     Select Page

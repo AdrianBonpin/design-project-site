@@ -1,4 +1,5 @@
 'use client'
+
 import {
     SDGBrainstorm,
     SDGHero,
@@ -8,7 +9,7 @@ import {
     SDGWireShow,
     SDGWireframe,
 } from '@/components/SDGModules'
-import styles from '../sdg.module.css'
+
 import joseImg from '@/public/sdg-first/jose.png'
 import matteoImg from '@/public/sdg-first/matteo.png'
 import jose from '@/public/sdg-first/joseprof.png'
@@ -169,13 +170,57 @@ export default function SDGPage() {
                     {
                         title: 'Log-in Screen',
                         content: [
-                            'Hero section displaying an image related to the service',
-                            'Logo and brand at the top',
-                            '- Clickable About section',
-                            'Clickable Community section',
-                            'Log-in popup to input username and password',
+                            'Jose Rico opens the job-hunting app and is greeted by a hero section displaying images related to job opportunities. He sees the app\'s logo and brand at the top. There are clickable sections for "About" and "Community." A log-in popup prompts him to input his username and password.'
                         ],
                     },
+                    {
+                        title: 'Register Screen',
+                        content: [
+                            'Jose navigates to the register screen where he finds a form to input details such as "First Name," "Family Name," "Username," "Password," and "Confirm Password." He notices the logo and brand at the top along with clickable sections for "About" and "Community."'
+                        ]
+                    },
+                    {
+                        title: 'Landing Screen',
+                        content: [
+                            'After logging in, Jose is directed to the landing screen. He sees clickable sections for "About" and "Community." For unregistered/guest users, there are options to sign in or register. Images related to the service are displayed, creating an engaging environment.'
+                        ]
+                    },
+                    {
+                        title: 'Home Screen',
+                        content: [
+                            'The home screen presents images related to the service. Jose can view posts from followed users and has the ability to post. A side section for settings, like "My Saved" or "My Favorites," is accessible.'
+                        ]
+                    },
+                    {
+                        title: 'Profile Screen',
+                        content: [
+                            'Jose accesses his profile screen, where he sees his profile picture. He can edit his profile using the pencil button. Options to "Connect" and "Message" other users are available. Details about his education, experience, skills, and other social media handles are visible. A section suggests "People You May Know" for potential connections.'
+                        ]
+                    },
+                    {
+                        title: 'Job List Screen',
+                        content: [
+                            'Jose explores the job list screen, featuring detailed descriptions and titles of open jobs with supporting images. The list is scrollable, and filters allow him to specify preferences for finding specific jobs.'
+                        ]
+                    },
+                    {
+                        title: 'Job Screen',
+                        content: [
+                            'Navigating to a specific job, Jose sees a navbar with various options. Detailed information about the company and job description, including qualifications, is presented. A "Meet The Hiring Team" section provides insights into the employers. Jose can apply for the job and save it for future reference.'
+                        ]
+                    },
+                    {
+                        title: 'Messages Screen',
+                        content: [
+                            'Jose checks his messages, where a list displays interactions between him and employers. He can categorize messages as "Important" or "Archived" and search specific messages. Clicking on a message focuses on a specific message box, and attachments like images and pdf files can be sent.'
+                        ]
+                    },
+                    {
+                        title: 'Notifications Screen',
+                        content: [
+                            'Jose receives notifications for messages, recommended job offers, and the status of his applications. The screen allows him to view all notifications chronologically, both read and unread.'
+                        ]
+                    }
                 ]}
             />
             <SDGWireShow image={wireframe} />
